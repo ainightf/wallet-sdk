@@ -16,8 +16,9 @@ function GetJsonInfo(address,password,dataDir){
     let keyObject;
     if(address.length == 42){
         keyObject = keythereum.importFromFile(address.slice(2),dataDir);
+    }else{
+        keyObject = keythereum.importFromFile(address,dataDir);
     }
-    keyObject = keythereum.importFromFile(address,dataDir);
     let privateKey = keythereum.recover(password, keyObject);
     let jsonInfo = new Object();
     jsonInfo.keyObject = keyObject;
@@ -142,13 +143,13 @@ module.exports = SendConstractSignedTransfer;
 
 
 // async function main(){
-    // var web3 = new Web3(Web3.givenProvider || 'https://data-seed-prebsc-1-s1.binance.org:8545/');
-    //  let res = await SignTransfer(web3,'test','./','0xc3ddA49F98F73004b1ed14d3570bA2a983c0caCe','youjiahua123','0xff423c59177571cbeFe13da643c507BD8fDf3Ec8',0.1)
-    //  let aa = await SendSignedTransfer(web3,res);
-    // let ress =  await _constractSignTransfer('0xc3ddA49F98F73004b1ed14d3570bA2a983c0caCe','youjiahua123','0xff423c59177571cbeFe13da643c507BD8fDf3Ec8','0x5dbE06a497e459A1078C68C5FAC236EF814D7286',10000,10,100000)
-    // let data = await ReadJsonABI(web3,"./erc20.json",'utf-8','0x5dbE06a497e459A1078C68C5FAC236EF814D7286','0xff423c59177571cbeFe13da643c507BD8fDf3Ec8',10000,10)
-    // let ress =  await ConstractSignTransfer(web3,'test','./','0xc3ddA49F98F73004b1ed14d3570bA2a983c0caCe','youjiahua123','0x5dbE06a497e459A1078C68C5FAC236EF814D7286',10,100000,data);
-    // await SendConstractSignedTransfer(web3,ress);
+//     var web3 = new Web3(Web3.givenProvider || 'https://data-seed-prebsc-1-s1.binance.org:8545/');
+//      let res = await SignTransfer(web3,'test','./','0xc3ddA49F98F73004b1ed14d3570bA2a983c0caCe','youjiahua123','0xff423c59177571cbeFe13da643c507BD8fDf3Ec8',0.1)
+//      let aa = await SendSignedTransfer(web3,res);
+//     // let ress =  await _constractSignTransfer('0xc3ddA49F98F73004b1ed14d3570bA2a983c0caCe','youjiahua123','0xff423c59177571cbeFe13da643c507BD8fDf3Ec8','0x5dbE06a497e459A1078C68C5FAC236EF814D7286',10000,10,100000)
+//     let data = await ReadJsonABI(web3,"./erc20.json",'utf-8','0x5dbE06a497e459A1078C68C5FAC236EF814D7286','0xff423c59177571cbeFe13da643c507BD8fDf3Ec8',10000,10)
+//     let ress =  await ConstractSignTransfer(web3,'test','./','0xc3ddA49F98F73004b1ed14d3570bA2a983c0caCe','youjiahua123','0x5dbE06a497e459A1078C68C5FAC236EF814D7286',10,100000,data);
+//     await SendConstractSignedTransfer(web3,ress);
 // }
 // main()
 
