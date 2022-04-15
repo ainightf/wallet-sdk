@@ -1,0 +1,21 @@
+{
+  "name": "wallet-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "ethereumjs-common": "^1.5.2",
+    "ethereumjs-tx": "^2.1.2",
+    "fs": "^0.0.1-security",
+    "keythereum": "^1.2.0",
+    "send": "^0.18.0",
+    "web3": "^1.7.3",
+    "web3-eth-accounts": "^1.7.3"
+  }
+}
